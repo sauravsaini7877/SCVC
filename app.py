@@ -12,13 +12,8 @@ def load_artifacts():
 
 model, vectorizer = load_artifacts()
 
-col_logo, col_text = st.columns([1, 6])
-with col_logo:
-    if os.path.exists("logo.png"):
-        st.image("logo.png", width=95)
-with col_text:
-    st.title("Source Code Vulnerability Classifier")
-    st.caption("Machine Learning System for Vulnerability Detection in Python and C++ Snippets")
+st.title("Source Code Vulnerability Classifier")
+st.caption("Machine Learning System for Vulnerability Detection in Python and C++ Snippets")
 
 col1, col2 = st.columns([1, 1])
 
