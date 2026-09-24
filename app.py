@@ -2,7 +2,7 @@ import os
 import joblib
 import streamlit as st
 
-st.set_page_config(page_title="Source Code Vulnerability Classifier", layout="wide")
+st.set_page_config(page_title="Source Code Vulnerability Classifier", page_icon="logo.png", layout="wide")
 
 @st.cache_resource
 def load_artifacts():
@@ -12,8 +12,13 @@ def load_artifacts():
 
 model, vectorizer = load_artifacts()
 
-st.title("Source Code Vulnerability Classifier")
-st.caption("Machine Learning System for Vulnerability Detection in Python and C++ Snippets")
+col_logo, col_text = st.columns([1, 6])
+with col_logo:
+    if os.path.exists("logo.png"):
+        st.image("logo.png", width=95)
+with col_text:
+    st.title("Source Code Vulnerability Classifier")
+    st.caption("Machine Learning System for Vulnerability Detection in Python and C++ Snippets")
 
 col1, col2 = st.columns([1, 1])
 
